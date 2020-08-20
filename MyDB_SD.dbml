@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="cNine_Student_Detail" Class="MyDB_SDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-407ICBFN\ASHOK;Initial Catalog=cNine_Student_Detail;Integrated Security=True" SettingsObjectName="CNINE_Fee_Management.Properties.Settings" SettingsPropertyName="cNine_Student_DetailConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.LKG" Member="LKGs">
+    <Type Name="LKG">
+      <Column Name="lk_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="lk_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_fatherName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_motherNmae" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_SrNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_DOB" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_DOA" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_class" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_section" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_contactNo" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_adharNo" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_cast" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_religion" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="lk_preSchool" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.lk_insertLKG" Method="lk_insertLKG">
+    <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fatherName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="motherName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="srNo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="DateOfBirth" Parameter="dateOfBirth" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="DateOfAdmission" Parameter="dateOfAdmission" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="class" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="section" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="contactNo" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adharNo" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="cast" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="religion" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="preSchool" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.lk_updateLKG" Method="lk_updateLKG">
+    <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fatherName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="motherName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="srNo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="DateOfBirth" Parameter="dateOfBirth" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="DateOfAdmission" Parameter="dateOfAdmission" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="class" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="section" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="contactNo" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adharNo" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="cast" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="religion" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="preSchool" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LKG_ID" Parameter="lKG_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.lk_deleteLKG" Method="lk_deleteLKG">
+    <Parameter Name="LKG_ID" Parameter="lKG_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.lk_getLKG" Method="lk_getLKG">
+    <ElementType Name="lk_getLKGResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FatherName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MotherName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SrNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfBirth" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfAdmission" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Section" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNo" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AdharNo" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Cast" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Religion" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="PreSchool" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.lk_searchLKG" Method="lk_searchLKG">
+    <Parameter Name="data" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="lk_searchLKGResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FatherName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MotherName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SrNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfBirth" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfAdmission" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Section" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNo" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AdharNo" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Cast" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Religion" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="PreSchool" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="cNine_Fee_Management" Class="MyDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-407ICBFN\ASHOK;Initial Catalog=cNine_Fee_Management;Integrated Security=True" SettingsObjectName="CNINE_Fee_Management.Properties.Settings" SettingsPropertyName="cNine_Fee_ManagementConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.staff" Member="staffs">
+    <Type Name="staff">
+      <Column Name="st_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="st_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="st_fatherName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="st_EPFID" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="st_DOB" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="st_DOJ" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="st_emailAddress" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="st_phone1" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="st_phone2" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="st_Post" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="st_status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.st_insertStaff" Method="st_insertStaff">
+    <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fatherName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EPFID" Parameter="ePFID" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="DateOfBirth" Parameter="dateOfBirth" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="DateOfJoin" Parameter="dateOfJoin" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="EmailAddress" Parameter="emailAddress" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="phone1" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="phone2" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="post" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.Byte" DbType="TinyInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.st_getStaff" Method="st_getStaff">
+    <ElementType Name="st_getStaffResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.st_deleteStaff" Method="st_deleteStaff">
+    <Parameter Name="StaffID" Parameter="staffID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.st_updateStaff" Method="st_updateStaff">
+    <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FatherName" Parameter="fatherName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EPFID" Parameter="ePFID" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="DateOfBirth" Parameter="dateOfBirth" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="DateOfJoin" Parameter="dateOfJoin" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="emailAddress" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="phone1" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="phone2" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="post" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="staffID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.st_getStaffDetails" Method="st_getStaffDetails">
+    <ElementType Name="st_getStaffDetailsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EPFID" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="FatherNamme" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfBirth" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfJoin" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailAddress" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone1" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone2" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Post" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.r_searchStaff" Method="r_searchStaff">
+    <Parameter Name="data" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="r_searchStaffResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FatherName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EPFID" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfBirth" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfJoin" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailAddress" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone1" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone2" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Post" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
